@@ -5,7 +5,6 @@ import RightMenu from './RightMenu';
 import '../App.css';
 import { Drawer, Button, Menu, Row, Col } from 'antd';
 
-
 export default function NavBar() {
     const [ visible, setVisible ] = useState(false);
 
