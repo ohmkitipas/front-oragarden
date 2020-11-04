@@ -6,12 +6,44 @@
   box-sizing: border-box;
 }
 
-
-.Logo {
-  justify-content: left;
-  width: 50%;
+.menuBar{
+  padding: 0 20px;
+  background-color: #335135;
+  border-bottom: solid 1px #e8e8e8;
+  overflow: auto;
+  box-shadow: 0 0 30px whitesmoke;
 }
 
+.logo{
+  width: 150px;
+  float: left;
+}
+
+.menuCon{
+  width: calc(100% - 150px);
+  float: left;
+}
+
+.menuCon .ant-menu-item{
+  padding: 0px 5px;
+}
+.menuCon .ant-menu-submenu-title{
+  padding: 10px 20px;
+}
+.menuCon .ant-menu-item a, .menuCon .ant-menu-submenu-title a{
+  padding: 10px 15px;
+}
+.menuCon .ant-menu-horizontal{
+  border-bottom: none;
+}
+
+.menuCon .midMenu{
+  float: center;
+}
+
+.menuCon .rightMenu{
+  float: right;
+}
 .Banner {
   display: flex;
   align-items: center;
@@ -34,11 +66,20 @@
   color: #61dafb;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+@media(max-width: 767px){
+  .barsMenu{
+    display: inline-block;
   }
-  to {
-    transform: rotate(360deg);
+  .leftMenu,.rightMenu{
+    display: none;
+  }
+  .logo a{
+    margin-left: -20px;
+  }
+  .menuCon .ant-menu-item, .menuCon .ant-menu-submenu-title{
+    padding: 1px 20px;
+  }
+  .logo a{
+    padding: 10px 20px;
   }
 }

@@ -6,6 +6,7 @@ import Banner4 from "../../picture/banner4.jpg";
 import '../../App.css';
 import { Layout, Carousel, Row, Col } from 'antd';
 import NavBar from '../NavBar';
+import FooterBar from '../Footer'
 const { Header, Content, Footer } = Layout;
 
 export default function index() {
@@ -13,22 +14,18 @@ export default function index() {
     <Layout>
         <div>
           <NavBar />
-        </div> 
-    
+        </div>   
+      
 
       <Content>
       <Row justify ="center">
-        <Col span = {22}>
-        <Carousel autoplay >
-
-           
+        <Col span = {24}>
+        <Carousel autoplay >       
            <div><img src={ Banner1 } alt="gardenBanner"/></div>
            <div><img src={ Banner2 } alt="oragardenBanner" /></div>
            <div><img src={ Banner3 } alt="oragardenBanner" /></div>
-           <div><img src={ Banner4 } alt="oragardenBanner" /></div>
-        
-        </Carousel>
-        
+           <div><img src={ Banner4 } alt="oragardenBanner" /></div>      
+        </Carousel> 
         </Col>
       </Row>   
         
@@ -38,7 +35,7 @@ export default function index() {
             index page
         </div>
       <Footer>
-           Footer
+           <FooterBar/>
       </Footer>
      </Layout>
     );

@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
 import logo from '../picture/logo.jpg';
-import MidMenu from './MidMenu';
-import RightMenu from './RightMenu';
+import {  Nav,  NavLink, RightNav,  Bars,  NavMenu,  NavBtn,  NavBtnLink} from './NavElements';
 import '../App.css';
-import { Drawer, Button, Menu, Row, Col } from 'antd';
+import { Drawer } from 'antd';
+
 
 export default function NavBar() {
     const [ visible, setVisible ] = useState(false);
@@ -17,20 +17,31 @@ export default function NavBar() {
     };
 
     return (
-             <nav className="menuBar">
-               <div className="logo">
-                 <img src= {logo} alt="oragarden" height="64" />
-               </div>
-               <div className="menuCon">
-                 <div className="midMenu">
-                   < MidMenu/>
-                 </div>
-                 <div className="rightMenu">
-                   <RightMenu/>
-                 </div>
-                 <Button className="barsMenu" type="primary" onClick={showDrawer}>
-                   <span className="barBtn"></span>
-                 </Button>
+        <Nav>
+          <NavLink to ='/'>
+            <img src= { logo } alt ="oragarden" height="64" align="left"/>
+          </NavLink>
+          <NavMenu>
+            <NavLink to='/products' activeStyle>
+              PRODUCT
+            </NavLink>
+            <NavLink to='/plantCare' activeStyle>
+              PLANT CARE
+            </NavLink>
+            <NavLink to='/aboutUs' activeStyle>
+              ABOUT US
+            </NavLink>
+          </NavMenu>
+          <RightNav>
+            <NavLink to='/register' activeStyle>
+              Sign Up
+            </NavLink>
+            <NavBtn>
+              <NavBtnLink to='/login'>Sign In</NavBtnLink>
+            </NavBtn>
+          </RightNav>
+          <Bars onClick={showDrawer}>
+          </Bars>
                  <Drawer
                      title="ORAGARDEN"
                      placement="right"
@@ -38,45 +49,15 @@ export default function NavBar() {
                      onClose={onClose}
                      visible={visible}
                      >
-                       <MidMenu/>
-                       <RightMenu/>
+                     <a href="/products">PRODUCT</a> <br/>
+                     <a href="/plantCare">PLANT CARE</a> <br/>
+                     <a href="/aboutUs">ABOUT US</a> <br/>
+                     <a href="/register">Sign Up</a> <br/>
+                     <a href="/login">Sign In</a> <br/>
                      </Drawer>
 
-               </div>
-             </nav>
+    
+        </Nav>
     );
     }
-/*<div>
-        <Row>
-              <Col>
-                <div >
-                  <img src={ logo } alt = "oragardenlogo" height="64" />
-                </div>
-              </Col>
-              <Col>
-                <div className="midMenu">
-                   <MidMenu />
-                </div>
-              </Col>
-              <Col>
-                <div className="rightMenu">
-                    <RightMenu />
-                </div>
-              </Col>
-              <Button className="barsMenu" type="primary" onClick={showDrawer}>
-                <span className="barBtn"></span>
-              </Button>
-              <Drawer
-               title = "ORA GARDEN"
-               placement = "right"
-               closable = {false}
-               onClose = {onClose}
-               visible = {visible}
-               >
-                 <MidMenu />
-                 <RightMenu />
-
-               </Drawer>
-        </Row>
-      </div>*/
 
